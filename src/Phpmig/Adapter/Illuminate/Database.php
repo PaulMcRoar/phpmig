@@ -118,7 +118,8 @@ class Database implements AdapterInterface
     {
         /* @var \Illuminate\Database\Schema\Blueprint $table */
         $this->adapter->getSchemaBuilder()->create($this->tableName, function ($table) {
-            $table->string('version');
+		$table->string('version');
+		$table->collation = 'utf8_general_ci';
         });
     }
 }
